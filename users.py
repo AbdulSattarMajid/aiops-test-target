@@ -16,4 +16,6 @@ def find_user(user_id):
 
 def get_user_email(user_id):
     user = find_user(user_id)
+    if user is None:
+        raise LookupError(f"user {user_id} not found")
     return user.email
